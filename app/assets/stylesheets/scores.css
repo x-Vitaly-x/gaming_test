@@ -1,0 +1,73 @@
+/*+clearfix {*/
+UL.scores .score:after, UL.scores .score A:after
+{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+}
+UL.scores .score, UL.scores .score A
+{
+	display: inline-block;
+}
+UL.scores .score, UL.scores .score A
+{
+/*\*/
+	display: block;
+/**/
+	-height: 1px;
+}
+/*+}*/
+UL.scores
+{
+	/*+placement:shift 0px 0px;*/
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+/*[clearfix]*/UL.scores .score
+{
+	border: 1px solid #E3E3E3;
+	background-color: #F5F5F5;
+}
+UL.scores .score DIV
+{
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	height: 30px;
+	padding-top: 10px;
+}
+.scores .score .username
+{
+	width: 90%;
+	font-weight: bold;
+	color: #000000;
+}
+UL.scores .score:first-child
+{
+	border-radius: 10px 10px 0 0;
+}
+UL.scores .score .more
+{
+	width: 90%;
+	font-weight: bold;
+	/*[empty]color:;*/
+}
+UL.scores .score:last-child
+{
+	border-radius: 0 0 10px 10px;
+}
+UL.scores .score:hover
+{
+	background-color: #FFFFFF;
+}
+/*[clearfix]*/UL.scores .score A
+{
+	width: 100%;
+}

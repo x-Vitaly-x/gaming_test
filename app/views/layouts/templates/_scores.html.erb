@@ -1,0 +1,31 @@
+<script id="scores_template" type="text/template">
+  <div id="scores"></div>
+</script>
+
+<script id="scores_list_template" type="text/template">
+  <ul class="scores">
+    {{$.each(scores.models,function(index,value){ }}
+    <li class="score">
+      <a href="/users/${{value.id}}">
+        <div class="username">
+          ${{value.attributes.username}}
+        </div>
+        <div class="count">
+          ${{value.attributes.score}}
+        </div>
+      </a>
+    </li>
+    {{ }); }}
+    <li class="score">
+      <a href="#">
+        <div class="more">
+          Load more
+        </div>
+      </a>
+    </li>
+  </ul>
+</script>
+
+<script id="scores_sidebar_template" type="text/template">
+  <div>Current top scores:</div>
+</script>

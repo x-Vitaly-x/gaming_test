@@ -1,0 +1,53 @@
+<div class="navbar-inner">
+  <div class="container">
+    <ul class="nav pull-left">
+      <%= link_to 'GamingTest', root_path, :class => 'brand' %>
+      <% unless current_user %>
+          <li class="dropdown" id="menu1">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+              Register
+              <b class="caret"></b>
+            </a>
+
+            <div class="dropdown-menu">
+              <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+                  <fieldset class='textbox' style="padding:10px">
+                    <%= f.text_field :username, :placeholder => 'username' %>
+                    <%= f.email_field :email, :placeholder => 'email' %>
+                    <%= f.password_field :password, :placeholder => 'password' %>
+                    <%= f.password_field :password_confirmation, :placeholder => 'password confirmation' %>
+                    <%= f.submit "Sign up", :class => "btn btn-primary" %>
+                  </fieldset>
+              <% end %>
+            </div>
+          </li>
+          <li class="dropdown" id="menu2">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#menu2">
+              Login
+              <b class="caret"></b>
+            </a>
+
+            <div class="dropdown-menu">
+              <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:style => "margin: 0px"}) do |f| %>
+                  <fieldset class='textbox' style="padding:10px">
+                    <%= f.text_field :login, :placeholder => 'login' %>
+                    <%= f.password_field :password, :placeholder => 'password' %>
+                    <%= f.submit "Sign in", :class => "btn btn-primary" %>
+                  </fieldset>
+              <% end %>
+            </div>
+          </li>
+      <% else %>
+          <li>
+            <a href="#" id="new_score" class="new_score">New Score</a>
+          </li>
+      <% end %>
+    </ul>
+    <ul class="nav pull-right">
+      <% if user=current_user %>
+          <li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
+      <% end %>
+    </ul>
+  </div>
+  <!--/.nav-collapse -->
+</div>
